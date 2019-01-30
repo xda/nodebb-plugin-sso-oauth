@@ -114,7 +114,7 @@
 				opts.callbackURL = nconf.get('url') + '/auth/' + constants.name + '/callback';
 
 				passportOAuth.Strategy.prototype.userProfile = function (accessToken, done) {
-					console.log("Trying "+constants.userRoute+" with "+token+" and "+secret);
+					console.log("Trying "+constants.userRoute+" with "+accessToken);
 					this._oauth2.get(constants.userRoute, accessToken, function (err, body/* , res */) {
 						if (err) {
 							return done(err);
