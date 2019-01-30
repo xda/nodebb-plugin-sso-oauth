@@ -172,7 +172,7 @@
 		// Everything else is optional.
 
 		// Find out what is available by uncommenting this line:
-		// console.log(data);
+		console.log(data);
 
 		var profile = {};
 		profile.id = data.userid;
