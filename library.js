@@ -114,13 +114,13 @@
 				opts.callbackURL = nconf.get('url') + '/auth/' + constants.name + '/callback';
 
 				passportOAuth.Strategy.prototype.userProfile = function (accessToken, done) {
-					console.log("Trying "+constants.userRoute+" with "+accessToken);
-					this._oauth2.get(constants.userRoute, accessToken, function (err, body/* , res */) {
-
-						console.log("Debug: ",this);
+					console.log('Trying ' + constants.userRoute + ' with ' + accessToken);
+					this._oauth2.get(constants.userRoute, accessToken, function (err, body, res) {
+						console.log('Debug: ', err, body, res);
 
 						if (err) {
-							return done("Failed to fetch user profile", err);
+							console.log(err);
+							return done(err);
 						}
 
 						try {
