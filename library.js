@@ -115,6 +115,10 @@
 
 				passportOAuth.Strategy.prototype.userProfile = function (accessToken, done) {
 					console.log('Trying ' + constants.userRoute + ' with ' + accessToken);
+
+					// this._oauth2.setAuthMethod('Bearer'); // Default
+					this._oauth2.useAuthorizationHeaderforGET(true);
+
 					this._oauth2.get(constants.userRoute, accessToken, function (err, body, res) {
 						console.log('Debug: ', err, body, res);
 
