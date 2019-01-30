@@ -62,7 +62,7 @@
 			clientID: nconf.get('oauth:id'),	// don't change this line
 			clientSecret: nconf.get('oauth:secret'),	// don't change this line
 		},
-		userRoute: 'https://api.xda-developers.com/user',	// This is the address to your app's "user profile" API endpoint (expects JSON)
+		userRoute: 'https://api.xda-developers.com/v3/user',	// This is the address to your app's "user profile" API endpoint (expects JSON)
 	});
 
 	const OAuth = {};
@@ -90,6 +90,7 @@
 				opts.callbackURL = nconf.get('url') + '/auth/' + constants.name + '/callback';
 
 				passportOAuth.Strategy.prototype.userProfile = function (token, secret, params, done) {
+					console.log("Trying "+constants.userRoute+" with "+token+" and "+secret);
 					this._oauth.get(constants.userRoute, token, secret, function (err, body/* , res */) {
 						if (err) {
 							return done(err);
