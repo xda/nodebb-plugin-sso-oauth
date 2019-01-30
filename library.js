@@ -116,8 +116,11 @@
 				passportOAuth.Strategy.prototype.userProfile = function (accessToken, done) {
 					console.log("Trying "+constants.userRoute+" with "+accessToken);
 					this._oauth2.get(constants.userRoute, accessToken, function (err, body/* , res */) {
+
+						console.log("Debug: ",this);
+
 						if (err) {
-							return done(err);
+							return done("Failed to fetch user profile", err);
 						}
 
 						try {
