@@ -1,11 +1,11 @@
 {
-  "name": "nodebb-plugin-sso-oauth",
-  "version": "0.3.3",
-  "description": "NodeBB Generic OAuth SSO",
+  "name": "nodebb-plugin-sso-xda",
+  "version": "1.0.0",
+  "description": "NodeBB XDA OAuth SSO",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/julianlam/nodebb-plugin-sso-oauth"
+    "url": "https://github.com/xda/nodebb-plugin-sso-xda"
   },
   "keywords": [
     "nodebb",
@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/julianlam/nodebb-plugin-sso-oauth/issues"
+    "url": "https://github.com/xda/nodebb-plugin-sso-xda/issues"
   },
   "readme": "",
   "readmeFilename": "README.md",
